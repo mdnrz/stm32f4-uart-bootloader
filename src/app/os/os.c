@@ -2,7 +2,6 @@
 #include "app/packet/packet.h"
 #include "libopencm3/stm32/iwdg.h"
 #include "shared/memory/flash-io.h"
-#include "shared/drivers/drv-timer.h"
 #include "shared/drivers/drv-usart-dma.h"
 
 volatile uint16_t osDoggyRegister = OS_DOGGY_RESET_VALUE;
@@ -22,13 +21,6 @@ void os_init_rtos(void) {
     packet_tx_queueHandle = os_create_queue(packet_tx_queueAttr, packet_tx_queueHandle);
     packet_rx_taskHandle = os_create_task(packet_rx_taskAttr, packet_rx_taskHandle);
     packet_tx_taskHandle = os_create_task(packet_tx_taskAttr, packet_tx_taskHandle);
-
-    timer_enable_irq(capTimLo, TIM_DIER_CC1IE);
-    timer_enable_irq(capTimHi, TIM_DIER_UIE);
-
-    timer_ic_enable(capTimLo, TIM_IC1);
-    timer_enable_counter(capTimLo);
-    timer_enable_counter(capTimHi);
 
     usart_enable_idle_interrupt(gsm.port);
     usart_disable_rx_interrupt(gsm.port);

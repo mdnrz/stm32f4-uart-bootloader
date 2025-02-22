@@ -6,6 +6,7 @@ include $(APP_DIR)/make-freertos.mk
 
 # Modules
 APP_SRC += \
+		   $(wildcard $(APP_DIR)/packet/*.c) \
 		   $(wildcard $(APP_DIR)/os/*.c) \
 		   $(APP_DIR)/app.c \
 		   $(APP_DIR)/firmware_info.c \

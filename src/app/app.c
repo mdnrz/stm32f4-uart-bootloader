@@ -4,7 +4,6 @@
 #include "shared/memory/mem-blocks.h"
 #include "shared/drivers/drv-gpio.h"
 #include "shared/drivers/drv-rcc.h"
-#include "shared/drivers/drv-timer.h"
 #include "shared/drivers/drv-usart-dma.h"
 #include "app/packet/packet.h"
 
@@ -34,7 +33,6 @@ int main(void) {
     res_usart_init();
     res_usart_dma_gsm_setup();
     res_usart_dma_dbg_setup();
-    res_captureTimer_setup();
     packet_init();
 
     os_init_rtos();

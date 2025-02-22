@@ -24,8 +24,8 @@ include $(SRC_DIR)/globals/make-version.mk
 include $(SRC_DIR)/app/make-app.mk
 include $(SRC_DIR)/bl/make-bl.mk
 
-# all the files will be generated with this name (main.elf, main.bin, main.hex, etc)
-PROJECT_NAME = 8ch
+# all the files will be generated with this name (.elf, .bin, .hex, etc)
+PROJECT_NAME = project
 APP_NAME = $(PROJECT_NAME)-$(VERSION)
 BL_NAME = $(PROJECT_NAME)-bl
 
@@ -88,6 +88,7 @@ update_bin: version bl app
 	$(eval APP_ELF = $(notdir $(shell ls -t $(BUILD_DIR)/$(APP_NAME).elf)))
 	$(eval BL_ELF = $(notdir $(shell ls -t $(BUILD_DIR)/$(BL_NAME).elf)))
 	@(cp $(BUILD_DIR)/$(APP_ELF) $(BUILD_DIR)/fw.elf)
+	@(cp $(BUILD_DIR)/$(APP_NAME).bin $(BUILD_DIR)/fw.bin)
 
 app: $(BUILD_DIR)/$(APP_NAME).elf $(BUILD_DIR)/$(APP_NAME).bin $(BUILD_DIR)/$(APP_NAME).hex
 	$(Q)#$(TOOLCHAIN)size $(BUILD_DIR)/$(APP_NAME).elf

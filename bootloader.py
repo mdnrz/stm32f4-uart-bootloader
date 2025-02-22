@@ -27,40 +27,14 @@ fwInfoStruct = Struct(
         )
 
 paramStruct = Struct(
-        "currentInstance" / Enum(Int32ul,
-                                 BOOTLOADER=0,
-                                 APPLICATION=1,
-                                 ),
-        "entranceTh" / Float32l,
-        "exitTh" / Float32l,
-        "entranceDB" / Int32ul,
-        "exitDB" / Int32ul,
-        "layout" / Struct(
-            "lane0" / Struct(
-                "active" / Int8ul,
-                "ch" / Array(2, Int8ul),
-                ),
-            "lane1" / Struct(
-                "active" / Int8ul,
-                "ch" / Array(2, Int8ul),
-                ),
-            "lane2" / Struct(
-                "active" / Int8ul,
-                "ch" / Array(2, Int8ul),
-                ),
-            "lane3" / Struct(
-                "active" / Int8ul,
-                "ch" / Array(2, Int8ul),
-                ),
-            ),
-        "captureConfig" / Struct(
-            "switchingActive" / Enum(Int8ul,
-                                     DEACTIVE=0,
-                                     ACTIVE=1,
-                                     ),
-            "TB_SW_frequency" / Int32ul,
-            ),
-        "filterAvgWindow" / Int8ul,
+        "data" / Struct(
+            "float_param_1" / Float32l,
+            "float_param_2" / Float32l,
+            "dw_param" / Int32ul,
+            "w_param" / Int16ul,
+            "bool_param_1" / Int8ul,
+            "bool_param_2" / Int8ul,
+            )
         )
 
 packetStruct = Struct(
@@ -224,12 +198,12 @@ def update_state_machine():
                     retry += 1
             case 'UPDATE_SIZE':
                 try: 
-                    firmware = open('fw.bin', 'r')
+                    firmware = open('./build/fw.bin', 'r')
                 except OSError:
-                    print("[ERROR] File \"fw.bin\" not found.")
+                    print("[ERROR] File \"./build/fw.bin\" not found.")
                     sys.exit()
                 with firmware:
-                    FWSize = os.path.getsize('fw.bin')
+                    FWSize = os.path.getsize('./build/fw.bin')
                     data = FWSize.to_bytes(4, byteorder = 'little')
                 print("[INFO] Sending update size...")
                 packet = create_packet("UPDATE_SIZE", data)
@@ -268,9 +242,9 @@ def update_state_machine():
                     retry += 1
             case 'FIRMWARE_UPLOAD':
                 try: 
-                    firmware = open('fw.bin', 'rb')
+                    firmware = open('./build/fw.bin', 'rb')
                 except OSError:
-                    print("[ERROR] File \"fw.bin\" not found.")
+                    print("[ERROR] File \"./build/fw.bin\" not found.")
                     sys.exit()
                 with firmware:
                     totalChunk = (FWSize // 128) + 1

@@ -4,7 +4,6 @@
 #include "shared/comms/protocol/protocol.h"
 #include "shared/comms/ring-buffer/ring-buffer.h"
 #include "shared/drivers/drv-usart-dma.h"
-#include "shared/drivers/drv-timer.h"
 #include <string.h>
 #include "libopencm3/cm3/scb.h"
 #include "shared/memory/flash-io.h"
@@ -78,7 +77,6 @@ static void packet_state_machine(ProtocolPacketAttr_t attr) {
               if (flash_io_write_params(packetBuf + PACK_DATA_INDEX, attr.offset, attr.length) == attr.length) packet_send_ack();
               else packet_send_nack();
               vTaskExitCritical();
-              res_timers_reconfig();
         } break;
         case PROTOCOL_TAG_FIR: {
               if (flash_io_read_fw_info(response + PACK_DATA_INDEX, attr.offset, attr.length) == attr.length) {
