@@ -1,0 +1,16 @@
+bin/
+*.elf
+*.bin
+*.o
+*.d
+*.map
+generated.*.ld
+build/*
+.cache/*
+globals/version.c
+tags
+compile_commands.json
+bootloader/ncurses*
+bootloader/build*
+bootloader/nob
+bootloader/nob.old

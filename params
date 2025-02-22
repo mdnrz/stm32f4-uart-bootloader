@@ -1,0 +1,34 @@
+04, 26, 00, 00, 00, 00, 00, 00, 96, 43, 00, 00, 96, 43, 03, 00, 00, 00, 0a, 00, 00, 00, 01, 01, 03, 00, 02, 03, 00, 04, 05, 00, 06, 07, 00, 20, 03, 00, 00, 08, f9, 02,
+####################################
+Current Instance:  BOOTLOADER
+Entrance Threshold: 300
+Exit Threshold: 300
+Entrance Debounce: 3
+Exit Debounce: 10
+Layout:  Container:
+    lane0 = Container:
+        active = 1
+        ch = ListContainer:
+            1
+            3
+    lane1 = Container:
+        active = 0
+        ch = ListContainer:
+            2
+            3
+    lane2 = Container:
+        active = 0
+        ch = ListContainer:
+            4
+            5
+    lane3 = Container:
+        active = 0
+        ch = ListContainer:
+            6
+            7
+capture config:  Container:
+    switchingActive = (enum) DEACTIVE 0
+    TB_SW_frequency = 800
+Filter Avg Window:  8
+####################################
+

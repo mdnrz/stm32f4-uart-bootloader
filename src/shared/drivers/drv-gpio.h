@@ -1,0 +1,133 @@
+#ifndef __RES_GPIO_H__
+#define __RES_GPIO_H__
+
+#include <libopencm3/stm32/gpio.h>
+#include <libopencm3/stm32/rcc.h>
+
+#define ST_LED0_PORT GPIOD
+#define ST_LED0_PIN GPIO14
+#define ST_LED1_PORT GPIOD
+#define ST_LED1_PIN GPIO15
+#define ST_LED2_PORT GPIOG
+#define ST_LED2_PIN GPIO2
+#define ST_LED3_PORT GPIOG
+#define ST_LED3_PIN GPIO3
+
+#define CH0_LED0_PORT GPIOA
+#define CH0_LED0_PIN GPIO6
+#define CH0_LED1_PORT GPIOA
+#define CH0_LED1_PIN GPIO5
+#define CH1_LED0_PORT GPIOB
+#define CH1_LED0_PIN GPIO0
+#define CH1_LED1_PORT GPIOC
+#define CH1_LED1_PIN GPIO5
+#define CH2_LED0_PORT GPIOF
+#define CH2_LED0_PIN GPIO12
+#define CH2_LED1_PORT GPIOF
+#define CH2_LED1_PIN GPIO11
+#define CH3_LED0_PORT GPIOF
+#define CH3_LED0_PIN GPIO14
+#define CH3_LED1_PORT GPIOF
+#define CH3_LED1_PIN GPIO13
+#define CH4_LED0_PORT GPIOG
+#define CH4_LED0_PIN GPIO0
+#define CH4_LED1_PORT GPIOF
+#define CH4_LED1_PIN GPIO15
+#define CH5_LED0_PORT GPIOE
+#define CH5_LED0_PIN GPIO10
+#define CH5_LED1_PORT GPIOE
+#define CH5_LED1_PIN GPIO8
+#define CH6_LED0_PORT GPIOE
+#define CH6_LED0_PIN GPIO15
+#define CH6_LED1_PORT GPIOE
+#define CH6_LED1_PIN GPIO12
+#define CH7_LED0_PORT GPIOB
+#define CH7_LED0_PIN GPIO14
+#define CH7_LED1_PORT GPIOB
+#define CH7_LED1_PIN GPIO13
+
+#define CH0_EN_PORT GPIOC
+#define CH0_EN_PIN GPIO4
+#define CH1_EN_PORT GPIOA
+#define CH1_EN_PIN GPIO7
+#define CH2_EN_PORT GPIOB
+#define CH2_EN_PIN GPIO2
+#define CH3_EN_PORT GPIOB
+#define CH3_EN_PIN GPIO1
+#define CH4_EN_PORT GPIOE
+#define CH4_EN_PIN GPIO7
+#define CH5_EN_PORT GPIOG
+#define CH5_EN_PIN GPIO1
+#define CH6_EN_PORT GPIOB
+#define CH6_EN_PIN GPIO12
+#define CH7_EN_PORT GPIOB
+#define CH7_EN_PIN GPIO11
+
+#define MUX_IN_A_PORT GPIOD
+#define MUX_IN_A_PIN GPIO8
+#define MUX_IN_B_PORT GPIOD
+#define MUX_IN_B_PIN GPIO9
+#define MUX_IN_C_PORT GPIOD
+#define MUX_IN_C_PIN GPIO10
+
+#define MUX_OUT0_PORT GPIOE
+#define MUX_OUT0_PIN GPIO9
+#define MUX_OUT1_PORT GPIOE
+#define MUX_OUT1_PIN GPIO11
+#define MUX_OUT2_PORT GPIOE
+#define MUX_OUT2_PIN GPIO13
+#define MUX_OUT3_PORT GPIOE
+#define MUX_OUT3_PIN GPIO14
+
+#define GSM_PORT GPIOD
+#define GSM_RX_PIN GPIO5
+#define GSM_TX_PIN GPIO6
+
+#define SERIAL_PORT GPIOA
+#define SERIAL_RX_PIN GPIO10
+#define SERIAL_TX_PIN GPIO9
+
+#define DBG0_PORT GPIOE
+#define DBG0_PIN GPIO1
+#define DBG1_PORT GPIOE
+#define DBG1_PIN GPIO0
+#define DBG2_PORT GPIOB
+#define DBG2_PIN GPIO9
+#define DBG3_PORT GPIOB
+#define DBG3_PIN GPIO8
+#define DBG4_PORT GPIOB
+#define DBG4_PIN GPIO5
+#define DBG5_PORT GPIOG
+#define DBG5_PIN GPIO15
+#define DBG6_PORT GPIOG
+#define DBG6_PIN GPIO14
+#define DBG7_PORT GPIOG
+#define DBG7_PIN GPIO13
+
+#define ACTIVE_CH0_PORT GPIOC
+#define ACTIVE_CH0_PIN GPIO4
+#define ACTIVE_CH1_PORT GPIOA
+#define ACTIVE_CH1_PIN GPIO7
+#define ACTIVE_CH2_PORT GPIOB
+#define ACTIVE_CH2_PIN GPIO2
+#define ACTIVE_CH3_PORT GPIOB
+#define ACTIVE_CH3_PIN GPIO1
+#define ACTIVE_CH4_PORT GPIOE
+#define ACTIVE_CH4_PIN GPIO7
+#define ACTIVE_CH5_PORT GPIOG
+#define ACTIVE_CH5_PIN GPIO1
+#define ACTIVE_CH6_PORT GPIOB
+#define ACTIVE_CH6_PIN GPIO12
+#define ACTIVE_CH7_PORT GPIOB
+#define ACTIVE_CH7_PIN GPIO11
+
+typedef struct {
+    uint32_t port;
+    uint16_t pin;
+} GPIO_t;
+
+// Interface:
+void res_gpio_setup(void);
+
+void res_gpio_write_pin(uint32_t port, uint16_t pin, bool value);
+#endif // __RES_GPIO_H__
