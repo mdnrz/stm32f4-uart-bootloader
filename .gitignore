@@ -10,7 +10,3 @@ build/*
 globals/version.c
 tags
 compile_commands.json
-bootloader/ncurses*
-bootloader/build*
-bootloader/nob
-bootloader/nob.old

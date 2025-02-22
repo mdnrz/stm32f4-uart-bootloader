@@ -1,3 +1,6 @@
 [submodule "src/shared/opencm3"]
 	path = src/shared/opencm3
 	url = git@github.com:libopencm3/libopencm3.git
+[submodule "src/app/freertos"]
+	path = src/app/freertos
+	url = git@github.com:FreeRTOS/FreeRTOS-Kernel.git
