@@ -42,12 +42,12 @@ Currently the flash memory of the MCU is divided as below:
   for bootloader and application and flashing them in the corresponding addresses.
   
   ```
-  make all -> compile both application and bootloader binaries
-  make app -> compile application binary
-  make bl -> compile bootloader binary
-  make flash -> flash both application and bootloader to MCU
-  make flash-bl -> flash bootloader only without touching the application
-  make flash-app -> flash application only without touching the bootloader
+  `make all`: compile both application and bootloader binaries
+  `make app`: compile application binary
+  `make bl`: compile bootloader binary
+  `make flash`: flash both application and bootloader to MCU
+  `make flash-bl`: flash bootloader only without touching the application
+  `make flash-app`: flash application only without touching the bootloader
   ```
   
   Also there are 2 debug targets `(make fw-debug and make bl-debug)` for debugging the bootlaoder and application
@@ -61,14 +61,14 @@ Currently the flash memory of the MCU is divided as below:
   ```
   Specify the port connected to the MCU board (e.g. `/dev/ttyUSB0`) and choose one of 
   the actions listed:
-  1. `Read parameters` -> Read current parameters stored in the MCU's parameter section
-  2. `Update parameters` -> Write new parameters to the flash without touching application code
-  3. `Read firmware info` -> Read firmware verison, size, etc.
-  4. `Reset the core` -> Send reboot command ans start bootloader process.
-  5. `Lock serial line` -> Lock the UART line in case it's used by the application
-  6. `UnLock serial line` -> Release the UART lock
-  7. `Read diagnostics` -> Read the dumped diagnostic data from corresponding section
-  8. `Abort` -> Quit the bootlaoder
+  1. `Read parameters`: Read current parameters stored in the MCU's parameter section
+  2. `Update parameters`: Write new parameters to the flash without touching application code
+  3. `Read firmware info`: Read firmware verison, size, etc.
+  4. `Reset the core`: Send reboot command ans start bootloader process.
+  5. `Lock serial line`: Lock the UART line in case it's used by the application
+  6. `UnLock serial line`: Release the UART lock
+  7. `Read diagnostics`: Read the dumped diagnostic data from corresponding section
+  8. `Abort`: Quit the bootlaoder
 
 ## TODO
  
