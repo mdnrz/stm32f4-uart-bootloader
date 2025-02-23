@@ -4,15 +4,18 @@ This is a simple UART bootloader written for STM32f4 MCUs based on the libopencm
 
 ## Building
 
-clone this repo:
+clone this repo, build and setup the submodules and run make.
 ```
-git clone git@github.com:mdnr/stm32f4-uart-bootloader.git
+git clone git@github.com:mdnr/stm32f4-uart-bootloader.git --recurse-submodules --shallow-submodules
+cd stm32f4-uart-bootloader
+make -C src/shared/opencm3/ TARGETS=stm32/f4
+cp configs/FreeRTOSConfig.h src/app/freertos/include/
+make
 ```
-update the submodules (shalow clone). If you don't want to shalow clone the submodules
-you can use `--recursive
+The versioning of the build output is done automatically based on the latest tag and commit hash.
+## Memory layout
 
-##Layout
-Currently memory layout of the MCU is divided as below:
+Currently the flash memory of the MCU is divided as below:
 
  ```
  ****************************************
