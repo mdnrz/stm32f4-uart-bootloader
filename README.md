@@ -41,12 +41,12 @@ Currently the flash memory of the MCU is divided as below:
   The root directory Makefile takes care of compiling both binaries
   for bootloader and application and flashing them in the corresponding addresses.
   
-  `make all`: compile both application and bootloader binaries
-  `make app`: compile application binary
-  `make bl`: compile bootloader binary
-  `make flash`: flash both application and bootloader to MCU
-  `make flash-bl`: flash bootloader only without touching the application
-  `make flash-app`: flash application only without touching the bootloader
+ -  `make all`: compile both application and bootloader binaries
+ -  `make app`: compile application binary
+ -  `make bl`: compile bootloader binary
+ -  `make flash`: flash both application and bootloader to MCU
+ -  `make flash-bl`: flash bootloader only without touching the application
+ -  `make flash-app`: flash application only without touching the bootloader
   
   Also there are 2 debug targets `(make fw-debug and make bl-debug)` for debugging the bootlaoder and application
   remotely on the target.
