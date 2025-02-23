@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
-#include "shared/parameters/parameters.h"
+#include "shared/parameters.h"
 #include "shared/fwinfo.h"
-#include "shared/memory/mem-blocks.h"
+#include "shared/mem-blocks.h"
 
 static uint32_t mainAppEntry = 0XFFFF;
 

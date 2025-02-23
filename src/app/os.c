@@ -1,8 +1,8 @@
 #include "os.h"
-#include "app/packet/packet.h"
+#include "app/packet.h"
 #include "libopencm3/stm32/iwdg.h"
-#include "shared/memory/flash-io.h"
-#include "shared/drivers/drv-usart-dma.h"
+#include "shared/flash-io.h"
+#include "shared/drv-usart-dma.h"
 
 volatile uint16_t osDoggyRegister = OS_DOGGY_RESET_VALUE;
 

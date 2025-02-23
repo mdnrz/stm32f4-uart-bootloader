@@ -1,4 +1,4 @@
-#include "shared/parameters/parameters.h"
+#include "shared/parameters.h"
 
 // Default values for parameters
 __attribute__((section(".parameters_section"))) Parameters_t param = {

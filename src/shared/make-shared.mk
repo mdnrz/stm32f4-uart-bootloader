@@ -6,11 +6,7 @@ OPENCM3_INC = $(OPENCM3_DIR)/include
 # Modules
 DRIVERS_SRC = $(wildcard $(SHARED_DIR)/drivers/*.c)
 
-UTILS_SRC = $(wildcard $(SHARED_DIR)/comms/protocol/*c) \
-			$(wildcard $(SHARED_DIR)/comms/ring-buffer/*.c) \
-			$(wildcard $(SHARED_DIR)/crc/*.c) \
-			$(wildcard $(SHARED_DIR)/memory/*.c) \
-			$(wildcard $(SHARED_DIR)/parameters/*.c)
+UTILS_SRC = $(wildcard $(SHARED_DIR)/*c) \
 
 SHARED_SRC = $(DRIVERS_SRC) $(UTILS_SRC)
 SHARED_INC = -I$(OPENCM3_INC)

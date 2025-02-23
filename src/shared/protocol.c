@@ -1,5 +1,5 @@
 #include "protocol.h"
-#include "shared/crc/crc16.h"
+#include "shared/crc16.h"
 #include <stdbool.h>
 
 static bool protocol_validate_packet(uint8_t *packet, bool isFirmware) {

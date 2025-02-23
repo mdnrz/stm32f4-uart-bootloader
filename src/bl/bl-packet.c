@@ -1,8 +1,8 @@
 #include "bl-packet.h"
-#include "shared/comms/protocol/protocol.h"
-#include "shared/comms/ring-buffer/ring-buffer.h"
-#include "shared/drivers/drv-usart-dma.h"
-#include "bl/stimer/stimer.h"
+#include "shared/protocol.h"
+#include "shared/ring-buffer.h"
+#include "shared/drv-usart-dma.h"
+#include "bl/stimer.h"
 #include "libopencm3/stm32/f4/nvic.h"
 
 RingBuffer_t dbgRxRingBuf;

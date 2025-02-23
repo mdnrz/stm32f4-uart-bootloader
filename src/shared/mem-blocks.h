@@ -4,7 +4,7 @@
 #include "libopencm3/cm3/vector.h"
 #include "libopencm3/stm32/flash.h"
 #include "shared/fwinfo.h"
-#include "shared/parameters/parameters.h"
+#include "shared/parameters.h"
 
 /* 
  * ### MEMORY MAP ###

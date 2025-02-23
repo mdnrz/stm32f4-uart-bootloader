@@ -1,8 +1,8 @@
 #ifndef __PACKET_H__
 #define __PACKET_H__
 
-#include "app/os/os.h"
-#include "shared/drivers/drv-usart-dma.h"
+#include "app/os.h"
+#include "shared/drv-usart-dma.h"
 #include <stdbool.h>
 
 extern const OS_TaskAttr_t packet_rx_taskAttr;

@@ -1,12 +1,12 @@
 #include "packet.h"
-#include "app/os/os.h"
+#include "app/os.h"
 #include "libopencm3/stm32/f4/nvic.h"
-#include "shared/comms/protocol/protocol.h"
-#include "shared/comms/ring-buffer/ring-buffer.h"
-#include "shared/drivers/drv-usart-dma.h"
+#include "shared/protocol.h"
+#include "shared/ring-buffer.h"
+#include "shared/drv-usart-dma.h"
 #include <string.h>
 #include "libopencm3/cm3/scb.h"
-#include "shared/memory/flash-io.h"
+#include "shared/flash-io.h"
 
 RingBuffer_t dbgRxRingBuf;
 RingBuffer_t dbgTxRingBuf;

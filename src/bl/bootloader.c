@@ -1,10 +1,10 @@
-#include "bl/packet/bl-packet.h"
-#include "shared/memory/mem-blocks.h"
-#include "bl/update/update.h"
-#include <shared/drivers/drv-gpio.h>
-#include <shared/drivers/drv-rcc.h>
-#include <shared/drivers/drv-usart-dma.h>
-#include "bl/stimer/stimer.h"
+#include "bl/bl-packet.h"
+#include "shared/mem-blocks.h"
+#include "bl/update.h"
+#include "shared/drv-gpio.h"
+#include "shared/drv-rcc.h"
+#include "shared/drv-usart-dma.h"
+#include "bl/stimer.h"
 #include <string.h>
 
 static void jump_to_app(void) {

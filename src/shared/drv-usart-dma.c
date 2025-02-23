@@ -1,7 +1,7 @@
 /*#include "drv-usart.h"*/
 /*#include "shared/drivers/drv-dma.h"*/
 #include "drv-usart-dma.h"
-#include "shared/drivers/drv-gpio.h"
+#include "shared/drv-gpio.h"
 #include <libopencm3/cm3/nvic.h>
 #include <libopencm3/stm32/f4/nvic.h>
 #include <libopencm3/stm32/f4/rcc.h>

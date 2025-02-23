@@ -1,9 +1,9 @@
 #include "update.h"
-#include "bl/packet/bl-packet.h"
-#include "bl/stimer/stimer.h"
-#include "shared/comms/protocol/protocol.h"
-#include "shared/memory/flash-io.h"
-#include "shared/drivers/drv-gpio.h"
+#include "bl/bl-packet.h"
+#include "bl/stimer.h"
+#include "shared/protocol.h"
+#include "shared/flash-io.h"
+#include "shared/drv-gpio.h"
 #include <string.h>
 
 typedef enum {

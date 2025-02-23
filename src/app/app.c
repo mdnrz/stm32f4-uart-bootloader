@@ -1,11 +1,11 @@
-#include "app/os/os.h"
+#include "app/os.h"
 #include "libopencm3/cm3/scb.h"
-#include "shared/comms/protocol/protocol.h"
-#include "shared/memory/mem-blocks.h"
-#include "shared/drivers/drv-gpio.h"
-#include "shared/drivers/drv-rcc.h"
-#include "shared/drivers/drv-usart-dma.h"
-#include "app/packet/packet.h"
+#include "shared/protocol.h"
+#include "shared/mem-blocks.h"
+#include "shared/drv-gpio.h"
+#include "shared/drv-rcc.h"
+#include "shared/drv-usart-dma.h"
+#include "app/packet.h"
 
 #include <string.h>
 
