@@ -1,7 +1,9 @@
-#UART Bootloader for STM32F4 MCU
+# UART Bootloader for STM32F4 MCU
+
 This is a simple UART bootloader written for STM32f4 MCUs based on the libopencm3 library.
 
-##Building
+## Building
+
 clone this repo:
 ```
 git clone git@github.com:mdnr/stm32f4-uart-bootloader.git
@@ -46,23 +48,25 @@ Currently memory layout of the MCU is divided as below:
   Also there are 2 debug targets `(make fw-debug and make bl-debug)` for debugging the bootlaoder and application
   remotely on the target.
   
-  ##Using the bootloader
+  ## Using the bootloader
+  
   Run the python script from the root directory to connect to the serial port using a usb-serial converter
   ```
   ./bootloader.py
   ```
   Specify the port connected to the MCU board (e.g. `/dev/ttyUSB0`) and choose one of 
   the actions listed:
-  1. Read parameters -> Read current parameters stored in the MCU's parameter section
-  2. Update parameters -> Write new parameters to the flash without touching application code
-  3. Read firmware info -> Read firmware verison, size, etc.
-  4. Reset the core -> Send reboot command ans start bootloader process.
-  5. Lock serial line -> Lock the UART line in case it's used by the application
-  6. UnLock serial line -> Release the UART lock
-  7. Read diagnostics -> Read the dumped diagnostic data from corresponding section
-  8. Abort -> Quit the bootlaoder
+  1. `Read parameters` -> Read current parameters stored in the MCU's parameter section
+  2. `Update parameters` -> Write new parameters to the flash without touching application code
+  3. `Read firmware info` -> Read firmware verison, size, etc.
+  4. `Reset the core` -> Send reboot command ans start bootloader process.
+  5. `Lock serial line` -> Lock the UART line in case it's used by the application
+  6. `UnLock serial line` -> Release the UART lock
+  7. `Read diagnostics` -> Read the dumped diagnostic data from corresponding section
+  8. `Abort` -> Quit the bootlaoder
 
-##TODO
+## TODO
+ 
 - Adding GSM layer to support OTA update
 - Rewriting `bootloader.py` in C perhaps and adding proper UI to it
 - Adding Encryption
