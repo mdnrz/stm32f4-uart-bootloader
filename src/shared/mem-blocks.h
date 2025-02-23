@@ -14,7 +14,7 @@
  * ******************************************** 0x0804000 Bootloader end / Parameters start
  *  Parameters: 8KB
  *  (Config and application settings)
- *  ----------------------- 0x8002000
+ *  ----------------------- 0x8006000
  *  Doggy litter box: 8KB 
  *  (Watchdog register dump area)
  * ******************************************** 0x0808000 Parameters end / App start
