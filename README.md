@@ -13,6 +13,8 @@ cp configs/FreeRTOSConfig.h src/app/freertos/include/
 make
 ```
 The versioning of the build output is done automatically based on the latest tag and commit hash.
+(tag format must be `v<MAJOR>.<MINOR>`, e.g. `v0.1`)
+
 ## Memory layout
 
 Currently the flash memory of the MCU is divided as below:
